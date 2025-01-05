@@ -1,0 +1,10 @@
+﻿body {
+    /* Set background image */
+
+    background-color: #ffffff;
+    /* Set background size and other properties as needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional: Fixed background scrolling */
+}

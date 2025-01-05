@@ -1,0 +1,212 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout.master.cs" Inherits="Project_Student_Website.Layout" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <%--bootstrap css--%>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%--datatables css--%>
+    <link href="datatables/css/dataTables.dataTables.min.css" rel="stylesheet" />
+    <%--fontawesome css--%>
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+    <%--My Page StyleSheet css--%>
+    <link href="Css/My%20pages%20StyleSheet.css" rel="stylesheet" />
+    <%--Menu StyleSheet css--%>
+    <link href="Css/Rika.css" rel="stylesheet" />
+    <%--Web_BAckground StyleSheet css--%>
+    <link href="Css/WebsiteBackground.css" rel="stylesheet" />
+    
+
+
+     <%--Testing StyleSheet css--%>
+    <link href="Css/ScrachPad.css" rel="stylesheet" />
+
+
+
+    <%-- jquery--%>
+    <script src="bootstrap/js/jquery-3.2.1.slim.min.js"></script>
+    <%--popper--%>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <%--bootstrap js--%>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+   
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="padding-top: 40px;">
+
+    <form id="form1" runat="server" aria-orientation="horizontal">
+           <%-- navigator header 1--%>
+        <section>
+        <div>
+            
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="height: 40px; background-color: #03344d;">
+               
+                 <a class="navbar-brand" href="Home.aspx">   
+                     <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/images/OIG1.jpg"  Height="30px" ImageAlign="Right" Width="30px" OnClientClick="Home" />
+                    <asp:LinkButton ID="LinkButton4" runat="server" OnClick="LinkButton4_Click"  style="color : white" >Bit  Of Atoms</asp:LinkButton>
+                    
+                </a>
+                   
+               <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+               </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="D:\om\Visual studio Project\Project_Student_Website\Home.aspx">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="D:\om\Visual studio Project\Project_Student_Website\Owner.aspx">About Us</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Terms</a>
+                        </li>
+                        
+                    </ul>
+                    <ul class="navbar-nav center">
+                        <li class="nav-item active">
+                            <asp:TextBox ID="Txtbx_Search_Bar" runat="server" Width="225px" style="border-radius: 10px;"></asp:TextBox>
+                        </li>
+
+                        <li class="nav-item active">
+                             <img src="images/SearchLogo.jpg" alt="Search Logo" style="border-radius: 25%; height: 30px; width: 30px;">
+                        </li>
+
+                    </ul>
+
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" PostBackUrl="~/User_Login.aspx">User Login</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server" PostBackUrl="~/User_Singup.aspx">Sign Up</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">Logout</asp:LinkButton>
+                        </li>
+                        
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton7" runat="server">Hello user</asp:LinkButton>
+                        </li>
+                    </ul>
+                    </nav>
+
+              </div>
+              
+           
+           </section>
+            
+
+              <%-- navigator header 1--%>
+
+
+
+
+
+
+
+       <%-- navigator header 2--%>
+<div style="border: 0.5px solid #000000; padding: 1px;">
+ <ul class="navbar-nav mr-0">
+  <asp:Menu ID="Menu3" runat="server" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" Orientation="Horizontal" StaticSubMenuIndent="10px" OnMenuItemClick="Menu3_MenuItemClick1">
+      <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+      <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+      <DynamicMenuStyle BackColor="#FFFBD6" />
+      <DynamicSelectedStyle BackColor="#FFCC66" />
+      <DynamicItemTemplate>
+          <%# Eval("Text") %>
+      </DynamicItemTemplate>
+    <Items>
+        <asp:MenuItem Text="Frontend" Value="Frontend">
+            <asp:MenuItem Text="HTML5" Value="HTML5"></asp:MenuItem>
+            <asp:MenuItem Text="JavaScript" Value="JavaScript"></asp:MenuItem>
+            <asp:MenuItem Text="CSS3" Value="CSS3"></asp:MenuItem>
+            <asp:MenuItem Text="React JS" Value="React JS"></asp:MenuItem>
+            <asp:MenuItem Text="Bootstrap" Value="Bootstrap"></asp:MenuItem>
+        </asp:MenuItem>
+
+        <asp:MenuItem Text="Backend" Value="Backend">
+            <asp:MenuItem Text="Python" Value="Python"></asp:MenuItem>
+            <asp:MenuItem Text="Java" Value="Java"></asp:MenuItem>
+            <asp:MenuItem Text="Node.JS" Value="Node.JS"></asp:MenuItem>
+            <asp:MenuItem Text=".Net" Value=".Net"></asp:MenuItem>
+            <asp:MenuItem Text="Django" Value="Django"></asp:MenuItem>
+            <asp:MenuItem Text="Flask" Value="Flask"></asp:MenuItem>
+            <asp:MenuItem Text="PHP" Value="PHP"></asp:MenuItem>
+        </asp:MenuItem>
+
+        <asp:MenuItem Text="Database" Value="Database">
+            <asp:MenuItem Text="MySQL" Value="MySQL"></asp:MenuItem>
+            <asp:MenuItem Text="Oracle" Value="Oracle"></asp:MenuItem>
+            <asp:MenuItem Text="MongoDB" Value="MongoDB"></asp:MenuItem>
+        </asp:MenuItem>
+
+        <asp:MenuItem Text="Platform" Value="Platform">
+            <asp:MenuItem Text="Android" Value="Android"></asp:MenuItem>
+            <asp:MenuItem Text="Linux" Value="Linux"></asp:MenuItem>
+            <asp:MenuItem Text="AWS" Value="AWS"></asp:MenuItem>
+        </asp:MenuItem>
+
+        <asp:MenuItem Text="Security" Value="Security">
+            <asp:MenuItem Text="HTTPs" Value="HTTPs"></asp:MenuItem>
+            <asp:MenuItem Text="SSL/TLS" Value="SSL/TLS"></asp:MenuItem>
+            <asp:MenuItem Text="Firewall" Value="Firewall"></asp:MenuItem>
+        </asp:MenuItem>
+    </Items>
+      <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+      <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+      <StaticSelectedStyle BackColor="#FFCC66" />
+</asp:Menu>
+</ul>
+
+</div>
+       <%-- navigator header 2--%>
+            
+
+         <%--Main Content PlaceHolder--%>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+
+        </div>
+         <%--Main Content PlaceHolder--%>
+
+
+<!-- Footer -->
+<footer>
+    <div id="footer1" class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <p>
+                    <asp:LinkButton class="footerlinks" ID="LinkButton6" runat="server" PostBackUrl="~/Admin_Login.aspx">Admin Login</asp:LinkButton>&nbsp;
+                    <asp:LinkButton class="footerlinks" ID="LinkButton10" runat="server" Visible="False" OnClick="LinkButton10_Click">Member Management</asp:LinkButton>
+                    <asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server"  Visible="False" OnClick="LinkButton11_Click1">Admin Maker</asp:LinkButton>
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer2" class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <p>&copy; All right Reversed. <a class="footerlinks" href="Owner.aspx"" target="_blank">Bits of Atoms</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ./Footer -->
+        
+
+    </form>
+</body>
+</html>
